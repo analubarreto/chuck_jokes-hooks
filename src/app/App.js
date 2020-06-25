@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Grid } from 'semantic-ui-react';
+import React, { useState } from 'react'
+import { Grid } from 'semantic-ui-react'
 
 // Custom components
-import chuck from '../features/api/apiCall';
-import { SearchBar } from '../features/SearchBar';
-import { JokeList } from '../jokes/JokeList';
+import chuck from '../features/api/apiCall'
+import { SearchBar } from '../features/SearchBar'
+import { JokeList } from '../jokes/JokeList'
+import { JokeCard } from '../jokes/JokeCard'
 
 const App = () => {
   const [jokes, setJokes] = useState(null)
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <Grid container className="App">
       <SearchBar />
+      <JokeCard />
     </Grid>
   );
 }
