@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Grid } from 'semantic-ui-react'
-import axios from 'axios'
+import { jokeRequest } from '../features/api/baseURL'
 
 // Custom components
 import { SearchBar } from '../features/SearchBar'
@@ -12,7 +12,10 @@ const App = () => {
 
   useEffect(() => {
     const onSearchSubmit = async () => {
-      const response = await axios(`https://api.chucknorris.io/jokes/search?${query}`)
+      // const response = await axios(`https://api.chucknorris.io/jokes/search?${query}`)
+      const response = await jokeRequest.get('/jokes/search', {
+        params: query
+      })
 
       setJokes(response.jokes)
     }

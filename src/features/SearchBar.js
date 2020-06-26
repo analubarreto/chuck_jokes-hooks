@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Form, Container } from 'semantic-ui-react'
 
-export const SearchBar = ({onSubmit}) => {
-  const [query, setQuery] = useState()
-
+export const SearchBar = ({query, setQuery}) => {
   return (
     <Container>
       <Form>
