@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Container } from 'semantic-ui-react'
 
-export const SearchBar = ({query, setQuery}) => {
+export const SearchBar = ({onSubmit}) => {
+  const [query, setQuery] = useState('')
+
+  const onFormSubmit = event => {
+    event.preventDefault()
+
+    onSubmit(query)
+  }
+
   return (
     <Container>
-      <Form>
+      <Form onSubmit={onFormSubmit}>
         <Form.Field>
           <label>
             Joke Search:
@@ -12,7 +20,7 @@ export const SearchBar = ({query, setQuery}) => {
               type="text"
               placeholder="Joke's theme here"
               value={query}
-              onChange={setQuery}
+              onChange={e => setQuery(e.target.value)}
             />
           </label>
         </Form.Field>
