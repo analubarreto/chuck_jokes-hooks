@@ -14,12 +14,13 @@ const App = () => {
       params: { query: query }
     })
 
-    setJokes(response.jokes)
+    console.log(response)
+
+    setJokes(response)
   }
   
   return (
     <Grid container className="App">
-      {/* <SearchBar query={query} setQuery={e => setQuery(e.target.value)} /> */}
       <SearchBar onSubmit={onSearchSubmit} />
       <JokeList jokes={jokes} />
     </Grid>

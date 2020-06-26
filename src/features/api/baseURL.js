@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const jokeRequest = axios.create({
-  baseURL: 'https://api.chucknorris.is'
+  baseURL: 'https://api.chucknorris.io'
 })
