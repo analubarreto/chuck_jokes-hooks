@@ -16,7 +16,7 @@ const App = () => {
 
     console.log(response)
 
-    setJokes(response)
+    setJokes(response.data.result)
   }
   
   return (

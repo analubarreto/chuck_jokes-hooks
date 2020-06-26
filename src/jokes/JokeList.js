@@ -4,11 +4,13 @@ import { Card } from 'semantic-ui-react'
 
 export const JokeList = ({jokes}) => {
 
+  const returnJokes = jokes.map(joke => {
+    return <JokeCard key={joke.id} joke={joke} />
+  });
+
   return (
     <Card.Group>
-      {jokes.map(joke => (
-        <JokeCard key={joke.id} joke={joke} />
-      ))}
+      {returnJokes}
     </Card.Group>
   )
 }
