@@ -1,9 +1,14 @@
 import React from 'react'
+import { JokeCard } from './JokeCard'
+import { Card } from 'semantic-ui-react'
 
-export const JokeList = () => {
+export const JokeList = ({jokes}) => {
+
   return (
-    <div>
-      
-    </div>
+    <Card.Group>
+      {jokes.map(joke => (
+        <JokeCard key={joke.id} joke={joke} />
+      ))}
+    </Card.Group>
   )
 }
