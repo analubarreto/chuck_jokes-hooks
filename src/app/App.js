@@ -8,9 +8,8 @@ import { JokeList } from '../jokes/JokeList'
 
 const App = () => {
   const [jokes, setJokes] = useState([])
-  let query
 
-  const onSearchSubmit = async () => {
+  const onSearchSubmit = async query => {
     const response = await jokeRequest.get('/jokes/search', {
       params: { query: query }
     })
